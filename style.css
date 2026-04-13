@@ -1,0 +1,164 @@
+/* ===== БАЗА ===== */
+body {
+    margin: 0;
+    background: #0d0d0d;
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== ОСНОВНОЙ LAYOUT ===== */
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 260px;
+    background: #111;
+    padding: 15px;
+    border-right: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+/* input */
+.input-group {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.input-group input {
+    flex: 1;
+}
+
+/* список блоков */
+#blocksContainer {
+    margin-top: 10px;
+    overflow-y: auto;
+}
+
+/* ===== БЛОК ===== */
+.block-item {
+    display: flex;
+    align-items: flex-start; /* ВАЖНО */
+    
+    padding: 10px;
+    background: #1a1a1a;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    gap: 8px;
+}
+
+/* активный */
+.block-item.active {
+    background: #b30000;
+}
+
+/* текст блока */
+.block-item span {
+    flex: 1;
+    
+    word-break: break-word;
+    overflow-wrap: break-word;
+
+    line-height: 1.2;
+}
+
+/* кнопка удаления */
+.block-item button {
+    flex-shrink: 0; /* ключевая штука */
+
+    width: 28px;
+    height: 28px;
+
+    background: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* hover */
+.block-item:hover {
+    background: #2a2a2a;
+}
+
+/* ===== ПРАВАЯ ЧАСТЬ ===== */
+.content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 8px;
+    background: #111;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 6px;
+}
+
+button {
+    background: #b30000;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ===== СПИСОК ЗАДАЧ ===== */
+#taskList {
+    overflow-y: auto;
+}
+
+/* задача */
+li {
+    list-style: none;
+    background: #1a1a1a;
+    margin-bottom: 6px;
+    padding: 10px;
+    border-radius: 6px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* выполнено */
+.done {
+    text-decoration: line-through;
+    color: gray;
+}
+li {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

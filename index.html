@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Blocks App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ЛЕВАЯ ПАНЕЛЬ -->
+    <div class="sidebar">
+        <h2>Блоки</h2>
+
+        <div class="input-group">
+            <input type="text" id="search" placeholder="Поиск блоков">
+            <input type="text" id="blockInput" placeholder="Новый блок">
+            <button id="addBlock">+</button>
+        </div>
+
+        <div id="blocksContainer"></div>
+    </div>
+
+    <!-- ПРАВАЯ ПАНЕЛЬ -->
+    <div class="content">
+        <h2 id="blockTitle">Выберите блок</h2>
+
+        <div class="task-input">
+        
+            <input type="text" id="taskInput" placeholder="Новая задача">
+            <button id="addTask">Добавить</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
